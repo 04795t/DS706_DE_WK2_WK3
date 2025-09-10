@@ -6,10 +6,10 @@
 
 This project performs a comprehensive analysis of the World Happiness Report 2015-2019 dataset to explore global happiness patterns and the factors that contribute to happiness across 158 countries. The analysis includes:
 
-- Data inspection and cleaning
-- Regional and country-level filtering and grouping
-- Machine learning modeling to predict happiness scores
-- Visualizations summarizing global happiness trends
+* Data inspection and cleaning
+* Regional and country-level filtering and grouping
+* Machine learning modeling to predict happiness scores
+* Visualizations summarizing global happiness trends
 
 ---
 
@@ -85,23 +85,23 @@ python comparison_analysis.py
 
 ### 1. Data Import & Inspection
 
-- Loaded the CSV dataset and verified the size, there are 158 countries and 12 features
-- Inspected first rows (.head()), data types (.info()), and descriptive statistics (.describe())
-- Checked for missing values and duplicates: none were found
-- Happiness score range from 2.839 to 7.587
+* Loaded the CSV dataset and verified the size, there are 158 countries and 12 features
+* Inspected first rows (.head()), data types (.info()), and descriptive statistics (.describe())
+* Checked for missing values and duplicates: none were found
+* Happiness score range from 2.839 to 7.587
 
 ### 2. Filtering & Grouping
 
-- **Regional Analysis**: Group countries by `Region` to calculate average happiness scores.
+* **Regional Analysis**: Group countries by `Region` to calculate average happiness scores.
 
- - **Top Regions**:
+ * **Top Regions**:
     1. Australia and New Zealand: 7.285
     2. North America: 7.273
     3. Western Europe: 6.690
     4. Latin America and Caribbean: 6.145
     5. Eastern Asia: 5.626
 
-- **Top 10 Countries**:
+* **Top 10 Countries**:
   1. Switzerland: 7.587
   2. Iceland: 7.561
   3. Denmark: 7.527
@@ -114,42 +114,42 @@ python comparison_analysis.py
   10. Australia: 7.284
 
 ### 3. Machine Learning
-- **Model**: Linear Regression
-- **Features**: `Economy (GDP per Capita)`, `Family`, `Health (Life Expectancy)`, `Freedom`
-- **Target**: `Happiness Score`
-- Split dataset: 80% training, 20% testing
-- **R² Score**: 0.836 (83.6% accuracy)
-- Successfully explains 83.6% of happiness variation across countries
+* **Model**: Linear Regression
+* **Features**: `Economy (GDP per Capita)`, `Family`, `Health (Life Expectancy)`, `Freedom`
+* **Target**: `Happiness Score`
+* Split dataset: 80% training, 20% testing
+* **R² Score**: 0.836 (83.6% accuracy)
+* Successfully explains 83.6% of happiness variation across countries
 
 ### 4. Visualizations
-- `happiness_analysis.png`: 2015 detailed analysis including:
-    - Distribution of happiness scores
-    - Top 10 happiest countries bar chart
-    - GDP vs Happiness scatter plot
-    - Actual vs Predicted Happiness scatter plot with trend line
+* `happiness_analysis.png`: 2015 detailed analysis including:
+    * Distribution of happiness scores
+    * Top 10 happiest countries bar chart
+    * GDP vs Happiness scatter plot
+    * Actual vs Predicted Happiness scatter plot with trend line
 
-- `happiness_trend_simple.png`: Multi-year trend analysis (2015-2019)
+* `happiness_trend_simple.png`: Multi-year trend analysis (2015-2019)
 
 ### Multi-Year Comparison Analysis (2015-2019)
-- **Year-over-Year Trends**:
-  - 2015: Average happiness 5.376, Happiest: Switzerland (158 countries)
-  - 2016: Average happiness 5.382, Happiest: Denmark (157 countries)
-  - 2017: Average happiness 5.354, Happiest: Norway (155 countries)
-  - 2018: Average happiness 5.376, Happiest: Finland (156 countries)
-  - 2019: Average happiness 5.407, Happiest: Finland (156 countries)
+* **Year-over-Year Trends**:
+  * 2015: Average happiness 5.376, Happiest: Switzerland (158 countries)
+  * 2016: Average happiness 5.382, Happiest: Denmark (157 countries)
+  * 2017: Average happiness 5.354, Happiest: Norway (155 countries)
+  * 2018: Average happiness 5.376, Happiest: Finland (156 countries)
+  * 2019: Average happiness 5.407, Happiest: Finland (156 countries)
 
 **Global Summary Results**:
-- **Overall Trend**: Global happiness increased from 5.376 to 5.407 over the 5-year period
-- **Most Consistent Top Performer**: Finland was the happiest country 2 times (2018, 2019)
-- **Dataset Coverage**: Country participation varied from 155-158 nations across years
+* **Overall Trend**: Global happiness increased from 5.376 to 5.407 over the 5-year period
+* **Most Consistent Top Performer**: Finland was the happiest country 2 times (2018, 2019)
+* **Dataset Coverage**: Country participation varied from 155-158 nations across years
 
 ---
 
 ## Key Findings
 
-- **Average Global Happiness (2015)**: \~5.376
-- **Happiest Country**: Switzerland (7.587)
-- **Top 10 Countries**:
+* **Average Global Happiness (2015)**: \~5.376
+* **Happiest Country**: Switzerland (7.587)
+* **Top 10 Countries**:
     1. Switzerland: 7.587
     2. Iceland: 7.561
     3. Denmark: 7.527
@@ -160,17 +160,17 @@ python comparison_analysis.py
     8. Sweden: 7.364
     9. New Zealand: 7.286
     10. Australia: 7.284
-- **2015-2019 Global Happiness**: Global happiness shows a slight upward trend over the 2015-2019 period
-- **Strongest Predictors of Happiness**: GDP per capita, Family, Health
-- **Model Performance**: Linear Regression R² ≈ 0.836
+* **2015-2019 Global Happiness**: Global happiness shows a slight upward trend over the 2015-2019 period
+* **Strongest Predictors of Happiness**: GDP per capita, Family, Health
+* **Model Performance**: Linear Regression R² ≈ 0.836
 
 ---
 
-## Future Improvements
+## Possible Future Improvements
 
-- Experiment with more advanced ML models (Random Forest, Gradient Boosting)
-- Add interactive dashboards using Plotly or Dash
-- Feature engineering (social support index, well-being index)
+* Experiment with more advanced ML models (Random Forest, Gradient Boosting)
+* Add interactive dashboards using Plotly or Dash
+* Feature engineering (social support index, well-being index)
 
 ---
 
