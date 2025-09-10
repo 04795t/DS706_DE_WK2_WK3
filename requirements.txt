@@ -1,0 +1,20 @@
+# Core Data Analysis
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.12.0
+
+# Machine Learning
+scikit-learn>=1.1.0
+
+# Optional: Performance Enhancement
+polars>=0.18.0  # Optional: For faster DataFrame operations
+
+# Optional: Interactive visualizations
+plotly>=5.0.0 # Optional: For interactive plots
+
+# Optional: Development tools
+jupyter>=1.0.0  # For notebook development
+ipykernel>=6.0.0  # For Jupyter kernel
