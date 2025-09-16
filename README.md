@@ -167,7 +167,7 @@ python comparison_analysis.py
 ---
 ## Testing
 
-### Prerequisites**
+### Prerequisites
 * Python 3.8+
 * pandas, numpy, matplotlib, scikit-learn installed
 
@@ -191,10 +191,10 @@ python test_happiness.py
 
 ### Docker
 
-#### Prerequisites**
+#### Prerequisites
 * Docker Desktop installed and running
 
-#### Building and Running**
+#### Building and Running
 1. Build the Docker image:
 ```bash
 docker build -t happiness-analysis .
