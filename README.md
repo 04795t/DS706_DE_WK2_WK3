@@ -165,6 +165,74 @@ python comparison_analysis.py
 * **Model Performance**: Linear Regression R² ≈ 0.836
 
 ---
+## Testing
+
+### Prerequisites**
+* Python 3.8+
+* pandas, numpy, matplotlib, scikit-learn installed
+
+### Running Tests
+```bash
+python test_happiness.py
+```
+
+### Tests cover:
+* 10 tests including:
+  * Data loading validation (3)
+  * Filtering operations (2)
+  * Grouping operations (1)
+  * Machine learning model (2)
+  * Integration tests (2)
+* All tests passing with ML model R² = 0.836
+
+---
+
+## Containerization
+
+### Docker
+
+#### Prerequisites**
+* Docker Desktop installed and running
+
+#### Building and Running**
+1. Build the Docker image:
+```bash
+docker build -t happiness-analysis .
+```
+
+2. Run tests in Docker:
+```bash
+docker run happiness-analysis
+```
+
+3. Run analysis scripts in Docker:
+```bash
+docker run happiness-analysis python happiness_analysis.py
+docker run happiness-analysis python comparison_analysis.py
+```
+
+### VS Code Dev Container
+
+#### Prerequisites
+* Visual Studio Code
+* Docker Desktop installed
+* "Dev Containers" extension in VS Code
+
+#### Setup and Running
+1. Open project in VS Code:
+```bash
+code DS706_DE_WK2
+```
+
+2. When prompted, click "Reopen in Container" (or press command+shift+p and select "Dev Containers: Reopen in Container")
+
+3. Run tests or analysis in the container terminal:
+```bash
+python test_happiness.py
+python happiness_analysis.py
+```
+
+---
 
 ## Possible Future Improvements
 
