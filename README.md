@@ -127,8 +127,10 @@ python comparison_analysis.py
     * Top 10 happiest countries bar chart
     * GDP vs Happiness scatter plot
     * Actual vs Predicted Happiness scatter plot with trend line
+<img width="600" height="500" alt="happiness_analysis" src="https://github.com/user-attachments/assets/e30d732d-2571-46c0-9933-f117bb8b2f4c" />
 
 * `happiness_trend_simple.png`: Multi-year trend analysis (2015-2019)
+<img width="500" height="300" alt="happiness_trend_simple" src="https://github.com/user-attachments/assets/5eef0aa9-9cd2-4612-b00e-835caed9bd0f" />
 
 ### Multi-Year Comparison Analysis (2015-2019)
 * **Year-over-Year Trends**:
@@ -184,6 +186,10 @@ python test_happiness.py
   * Machine learning model (2)
   * Integration tests (2)
 * All tests passing with ML model R² = 0.836
+
+### Passed Test:
+<img width="500" height="286" alt="Screenshot 2025-09-16 at 19 56 56" src="https://github.com/user-attachments/assets/3a357519-aa54-43fd-af5e-3f346011776b" />
+
 
 ---
 
