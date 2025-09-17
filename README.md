@@ -231,6 +231,7 @@ code DS706_DE_WK2
 ```
 
 2. When prompted, click "Reopen in Container" (or press command+shift+p and select "Dev Containers: Reopen in Container")
+* The container will automatically install Python dependencies from `requirements.txt`
 
 3. Run tests or analysis in the container terminal:
 ```bash
