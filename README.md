@@ -228,24 +228,24 @@ python test_happiness.py
 
 ### Tests cover:
 1. Data Loading (4 tests)
-- Validates file existence, dataset size, required columns, and missing values  
-- Covers edge cases such as missing files, invalid filters, and data type checks  
+  - Validates file existence, dataset size, required columns, and missing values  
+  - Covers edge cases such as missing files, invalid filters, and data type checks  
 
 2. Filtering (3 tests)
-- Validates top-N filtering, region-based filtering, and edge cases (non-existent regions, NaN handling, duplicate scores)  
+  - Validates top-N filtering, region-based filtering, and edge cases (non-existent regions, NaN handling, duplicate scores)  
 
 3. Grouping (2 tests)
-- Region-based grouping and average scores  
-- Edge cases like missing regions, single-country regions, and multiple statistics aggregation  
+  - Region-based grouping and average scores  
+  - Edge cases like missing regions, single-country regions, and multiple statistics aggregation  
 
 4. Machine Learning (2 tests) 
-- Linear regression training and coefficient validation  
-- Prediction accuracy and R² score check (ensures >0.5, current ~0.83)  
+  - Linear regression training and coefficient validation  
+  - Prediction accuracy and R² score check (ensures >0.5, current ~0.83)  
 
 5. System / Integration (3 tests)  
-- Full pipeline: load -> filter -> group -> ML model  
-- Multi-year comparison across datasets  
-- Consistency of happiness scores and countries across years  
+  - Full pipeline: load -> filter -> group -> ML model  
+  - Multi-year comparison across datasets  
+  - Consistency of happiness scores and countries across years  
 
 ### Passed Test:
 <img width="500" height="286" alt="Screenshot 2025-09-16 at 19 56 56" src="https://github.com/user-attachments/assets/3a357519-aa54-43fd-af5e-3f346011776b" />
