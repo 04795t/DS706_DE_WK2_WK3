@@ -248,7 +248,7 @@ python test_happiness.py
   - Consistency of happiness scores and countries across years  
 
 ### Passed Test:
-<img width="500" height="286" alt="Screenshot 2025-09-16 at 19 56 56" src="https://github.com/user-attachments/assets/3a357519-aa54-43fd-af5e-3f346011776b" />
+<img width="521" height="379" alt="Screenshot 2025-09-16 at 21 28 03" src="https://github.com/user-attachments/assets/e032bda7-e726-4332-a935-6ed68366c618" />
 
 ---
 
