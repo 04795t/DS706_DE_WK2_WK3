@@ -60,7 +60,7 @@ This project performs a comprehensive analysis of the World Happiness Report 201
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/04795t/DS706_DE_WK2.git
+git clone https://github.com/04795t/DS706_DE_WK2_WK3.git
 ```
 
 2. Install dependencies:
