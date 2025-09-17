@@ -115,7 +115,7 @@ docker run happiness-analysis python comparison_analysis.py
 #### Setup and Running
 1. Open project in VS Code:
 ```bash
-code DS706_DE_WK2
+code DS706_DE_WK2_WK3
 ```
 
 2. When prompted, click "Reopen in Container" (or press command+shift+p and select "Dev Containers: Reopen in Container")
@@ -125,6 +125,7 @@ code DS706_DE_WK2
 ```bash
 python test_happiness.py
 python happiness_analysis.py
+python comparison_analysis.py
 ```
 
 ---
