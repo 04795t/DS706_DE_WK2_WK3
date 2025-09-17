@@ -60,11 +60,38 @@ def test_missing_values():
     df = pd.read_csv("Data/2015.csv")
 
     # Check happiness score has no nulls
-    assert df["Happiness Score"].notna(
-    ).all(), "Missing happiness scores found"
+    assert df["Happiness Score"].notna().all(), "Missing happiness scores found"
     assert df["Country"].notna().all(), "Missing country names found"
 
     print("Test 3 Passed: No critical missing values")
+
+
+# Edge Case Tests for Data Loading
+def test_data_loading_edge_cases():
+    """
+    Test edge cases in data loading
+    """
+    # Handle missing file
+    try:
+        df_missing = pd.read_csv("Data/nonexistent.csv")
+        assert False, "Should have raised FileNotFoundError"
+    except FileNotFoundError:
+        pass
+
+    # Handle empty DataFrame
+    df = pd.read_csv("Data/2015.csv")
+    empty_filter = df[df["Happiness Score"] < 0]  # Should be empty
+    assert len(empty_filter) == 0, "Empty filter should return 0 rows"
+
+    # Data type
+    assert pd.api.types.is_numeric_dtype(
+        df["Happiness Score"]
+    ), "Happiness Score should be numeric"
+    assert pd.api.types.is_object_dtype(
+        df["Country"]
+    ), "Country should be string/object type"
+
+    print("Test 3A Passed: Data loading edge cases handled")
 
 
 # Test II: Filtering
@@ -110,8 +137,43 @@ def test_filter_region():
         western_europe["Region"] == "Western Europe"
     ), "Filter included wrong regions"
 
-    print(
-        f"Test 5 Passed: Filtered {len(western_europe)} Western Europe countries")
+    print(f"Test 5 Passed: Filtered {len(western_europe)} Western Europe countries")
+
+
+# Edge Case Tests for Filtering
+def test_filter_edge_cases():
+    """
+    Test edge cases in filtering
+    """
+    df = pd.read_csv("Data/2015.csv")
+
+    # Non-existent region
+    non_existent = df[df["Region"] == "Atlantis"]
+    assert len(non_existent) == 0, "Non-existent region should return empty DataFrame"
+
+    # top N with N > dataset size
+    all_countries = df.nlargest(1000, "Happiness Score")
+    assert len(all_countries) == len(
+        df
+    ), "Should return all countries when N > dataset size"
+
+    # NaN values
+    df_with_nan = df.copy()
+    df_with_nan.loc[0, "Happiness Score"] = np.nan
+    top_with_nan = df_with_nan.nlargest(5, "Happiness Score")
+    assert len(top_with_nan) == 5, "Should handle NaN values in nlargest"
+    assert not np.isnan(
+        top_with_nan.iloc[0]["Happiness Score"]
+    ), "Top result should not be NaN"
+
+    # Duplicate happiness scores
+    duplicate_scores = df[df["Happiness Score"].duplicated()]
+    if len(duplicate_scores) > 0:
+        print(
+            f"Found {len(duplicate_scores)} countries with duplicate happiness scores"
+        )
+
+    print("Test 5A Passed: Filtering edge cases handled correctly")
 
 
 # Test III: Grouping Tests
@@ -133,6 +195,42 @@ def test_group_by_region():
     assert regional_happiness.max() < 10, "Invalid maximum happiness"
 
     print(f"Test 6 Passed: Grouped into {len(regional_happiness)} regions")
+
+
+# Edge Case Tests for Grouping
+def test_grouping_edge_cases():
+    """
+    Test edge cases in grouping operations
+    """
+    df = pd.read_csv("Data/2015.csv")
+
+    # Grouping with missing regions
+    df_with_missing = df.copy()
+    df_with_missing.loc[0, "Region"] = None
+    grouped_with_missing = df_with_missing.groupby("Region", dropna=False)[
+        "Happiness Score"
+    ].mean()
+
+    # Single country regions
+    region_counts = df.groupby("Region").size()
+    single_country_regions = region_counts[region_counts == 1]
+    if len(single_country_regions) > 0:
+        print(f"Found {len(single_country_regions)} regions with only one country")
+
+    # Aggregate multiple statistics
+    regional_stats = df.groupby("Region")["Happiness Score"].agg(
+        ["mean", "std", "count"]
+    )
+    assert len(regional_stats) > 0, "Regional statistics aggregation failed"
+    assert "mean" in regional_stats.columns, "Mean calculation missing"
+
+    # No empty groups
+    all_regions = df["Region"].unique()
+    for region in all_regions:
+        region_data = df[df["Region"] == region]
+        assert len(region_data) > 0, f"Region {region} should not be empty"
+
+    print("Test 6A Passed: Grouping edge cases handled correctly")
 
 
 # Test IV: Machine Learning
@@ -257,6 +355,59 @@ def test_multi_year_comparison():
     print(f"Test 10 Passed: Found data for years: {years_found}")
 
 
+def test_data_consistency():
+    """
+    Test data consistency across multiple years
+    """
+    years_data = {}
+
+    for year in [2015, 2016, 2017, 2018, 2019]:
+        filepath = f"Data/{year}.csv"
+        if os.path.exists(filepath):
+            df = pd.read_csv(filepath)
+            years_data[year] = df
+
+    if len(years_data) > 1:
+        # Common countries across years
+        all_countries = set()
+        year_countries = {}
+
+        for year, df in years_data.items():
+            # Handle different column names
+            country_col = "Country" if "Country" in df.columns else "Country or region"
+            countries = set(df[country_col].values)
+            year_countries[year] = countries
+            all_countries.update(countries)
+
+        # Find countries present in all years
+        common_countries = all_countries.copy()
+        for countries in year_countries.values():
+            common_countries = common_countries.intersection(countries)
+
+        print(f"Found {len(common_countries)} countries present in all available years")
+
+        # Happiness score ranges consistency
+        happiness_ranges = {}
+        for year, df in years_data.items():
+            happiness_col = (
+                "Happiness Score" if "Happiness Score" in df.columns else "Score"
+            )
+            if happiness_col in df.columns:
+                happiness_ranges[year] = (
+                    df[happiness_col].min(),
+                    df[happiness_col].max(),
+                )
+
+        if happiness_ranges:
+            min_range = min(r[0] for r in happiness_ranges.values())
+            max_range = max(r[1] for r in happiness_ranges.values())
+            print(
+                f"Happiness score range across all years: {min_range:.2f} - {max_range:.2f}"
+            )
+
+    print("Test 10A Passed: Multi-year data consistency check completed")
+
+
 # Run all tests
 if __name__ == "__main__":
     print("\n" + "=" * 50)
@@ -267,13 +418,17 @@ if __name__ == "__main__":
         test_data_loading,
         test_required_columns,
         test_missing_values,
+        test_data_loading_edge_cases,
         test_filter_top_10,
         test_filter_region,
+        test_filter_edge_cases,
         test_group_by_region,
+        test_grouping_edge_cases,
         test_ml_training,
         test_ml_predictions,
         test_complete_analysis_pipeline,
         test_multi_year_comparison,
+        test_data_consistency,
     ]
 
     passed = 0
