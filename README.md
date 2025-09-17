@@ -81,6 +81,54 @@ python comparison_analysis.py
 
 ---
 
+## Containerization
+
+### Docker
+
+#### Prerequisites
+* Docker Desktop installed and running
+
+#### Building and Running
+1. Build the Docker image:
+```bash
+docker build -t happiness-analysis .
+```
+
+2. Run tests in Docker:
+```bash
+docker run happiness-analysis
+```
+
+3. Run analysis scripts in Docker:
+```bash
+docker run happiness-analysis python happiness_analysis.py
+docker run happiness-analysis python comparison_analysis.py
+```
+
+### VS Code Dev Container
+
+#### Prerequisites
+* Visual Studio Code
+* Docker Desktop installed
+* "Dev Containers" extension in VS Code
+
+#### Setup and Running
+1. Open project in VS Code:
+```bash
+code DS706_DE_WK2
+```
+
+2. When prompted, click "Reopen in Container" (or press command+shift+p and select "Dev Containers: Reopen in Container")
+* The container will automatically install Python dependencies from `requirements.txt`
+
+3. Run tests or analysis in the container terminal:
+```bash
+python test_happiness.py
+python happiness_analysis.py
+```
+
+---
+
 ## Analysis Results
 
 ### 1. Data Import & Inspection
@@ -189,55 +237,6 @@ python test_happiness.py
 
 ### Passed Test:
 <img width="500" height="286" alt="Screenshot 2025-09-16 at 19 56 56" src="https://github.com/user-attachments/assets/3a357519-aa54-43fd-af5e-3f346011776b" />
-
-
----
-
-## Containerization
-
-### Docker
-
-#### Prerequisites
-* Docker Desktop installed and running
-
-#### Building and Running
-1. Build the Docker image:
-```bash
-docker build -t happiness-analysis .
-```
-
-2. Run tests in Docker:
-```bash
-docker run happiness-analysis
-```
-
-3. Run analysis scripts in Docker:
-```bash
-docker run happiness-analysis python happiness_analysis.py
-docker run happiness-analysis python comparison_analysis.py
-```
-
-### VS Code Dev Container
-
-#### Prerequisites
-* Visual Studio Code
-* Docker Desktop installed
-* "Dev Containers" extension in VS Code
-
-#### Setup and Running
-1. Open project in VS Code:
-```bash
-code DS706_DE_WK2
-```
-
-2. When prompted, click "Reopen in Container" (or press command+shift+p and select "Dev Containers: Reopen in Container")
-* The container will automatically install Python dependencies from `requirements.txt`
-
-3. Run tests or analysis in the container terminal:
-```bash
-python test_happiness.py
-python happiness_analysis.py
-```
 
 ---
 
