@@ -1,4 +1,4 @@
-# DS706_DE_WK2
+# DS706_DE_WK2_WK3
 
 # World Happiness Report Analysis - 2015 and simple analysis on years 2015-2019
 
