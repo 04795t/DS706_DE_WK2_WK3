@@ -15,10 +15,10 @@ def main():
     print("Comparing happiness across all years")
     print("=" * 50)
 
-    # Initialize lists to store results
-    years = []  # List to store each year
-    avg_scores = []  # List to store average global happiness per year
-    top_countries = []  # List to store the happiest country each year
+    # Initialize lists
+    years = []
+    avg_scores = []
+    top_countries = []
 
     # Loop through each year and collect key metrics
     def find_happiness_column(year, happiness_data):
