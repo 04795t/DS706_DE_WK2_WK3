@@ -5,6 +5,7 @@ This test file tests data loading, filtering, grouping, and ML functionality
 
 # Import necessary libraries
 import pandas as pd
+import numpy as np
 import os
 import sys
 from sklearn.linear_model import LinearRegression
