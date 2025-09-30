@@ -7,7 +7,11 @@
 
 ## Project Overview
 
-This project performs a comprehensive analysis of the World Happiness Report 2015-2019 dataset to explore global happiness patterns and the factors that contribute to happiness across 158 countries. The analysis includes:
+This project performs a comprehensive analysis of the World Happiness Report 2015-2019 dataset to explore global happiness patterns and the factors that contribute to happiness across 158 countries. 
+
+I am generally interested in happiness, and wonders about the difference in happiness level of individuals and groups. As I searched for datasets, I came across this dataset, a world happiness report. I wanted to know more about happiness globally, and how these may be informational towards possible social welfare decisions. There are many factors included, and I was only able to perform a simple analysis, but it was still interesting to see the rankings and the factors that are impactful towards national happiness. 
+
+The analysis includes:
 
 * Data inspection and cleaning
 * Regional and country-level filtering and grouping
@@ -218,6 +222,9 @@ python comparison_analysis.py
 * **Strongest Predictors of Happiness**: GDP per capita, Family, Health
 * **Model Performance**: Linear Regression R² ≈ 0.836
 
+These results challenged my initial assumptions about what would drive national happiness. I did expect economic factors to dominate. with R² ≈ 0.836, it was surprising how happiness appears to be predictable from simply four major factors, which was GDP, social support, health and freedom. Nordic countries are constanly at the top when ranking, and it was obvious that happiness was more than being economically wealthy. Strong social safety nets and personal autonomy is also important, which can be considered as nations make further decisions on what to develop. National policy decisions do matter, and we can see that through the fluctuation in happiness level rankings, with Finland becoming the happiest in 2018 and 2019. 
+
+There still needs to be more analysis on how and why these factors impact national happiness, but this is a starting point to uncover happiness, and to possibly improve. 
 ---
 ## Testing
 
