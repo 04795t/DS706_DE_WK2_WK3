@@ -1,0 +1,46 @@
+name: World Happiness Analysis CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install black flake8 pytest pytest-cov
+    
+    - name: Format check with Black
+      run: |
+        black --check *.py
+    
+    - name: Lint with flake8
+      run: |
+        flake8 --ignore=E501,W503,E203 *.py
+    
+    - name: Run tests
+      run: |
+        python test_happiness.py
+    
+    - name: Test data loading
+      run: |
+        python -c "import pandas as pd; df = pd.read_csv('Data/2015.csv'); print(f'Loaded {len(df)} countries')"
+    
+    - name: Verify analysis scripts
+      run: |
+        python -c "import happiness_analysis; print('Main analysis script imports successfully')"
+        python -c "import comparison_analysis; print('Comparison script imports successfully')"
