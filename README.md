@@ -255,6 +255,15 @@ python test_happiness.py
 <img width="521" height="379" alt="Screenshot 2025-09-16 at 21 28 03" src="https://github.com/user-attachments/assets/e032bda7-e726-4332-a935-6ed68366c618" />
 
 ---
+## Refactoring Commits
+### Happiness Analysis
+<img width="1515" height="807" alt="image" src="https://github.com/user-attachments/assets/236ae099-b564-4f08-90e7-ad8a0dceb10a" />
+
+### Comparison Analysis
+<img width="1519" height="935" alt="image" src="https://github.com/user-attachments/assets/eff470f4-b932-48fb-b6b8-70d1ffcbe6b4" />
+
+
+---
 
 ## Possible Future Improvements
 
