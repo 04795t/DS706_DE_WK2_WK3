@@ -222,6 +222,10 @@ python comparison_analysis.py
 * **Strongest Predictors of Happiness**: GDP per capita, Family, Health
 * **Model Performance**: Linear Regression R² ≈ 0.836
 
+---
+
+## Personal Reflection
+
 These results challenged my initial assumptions about what would drive national happiness. I did expect economic factors to dominate. with R² ≈ 0.836, it was surprising how happiness appears to be predictable from simply four major factors, which was GDP, social support, health and freedom. Nordic countries are constanly at the top when ranking, and it was obvious that happiness was more than being economically wealthy. Strong social safety nets and personal autonomy is also important, which can be considered as nations make further decisions on what to develop. National policy decisions do matter, and we can see that through the fluctuation in happiness level rankings, with Finland becoming the happiest in 2018 and 2019. 
 
 There still needs to be more analysis on how and why these factors impact national happiness, but this is a starting point to uncover happiness, and to possibly improve. 
