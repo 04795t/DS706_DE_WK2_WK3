@@ -2,6 +2,9 @@
 
 # World Happiness Report Analysis - 2015 and simple analysis on years 2015-2019
 
+## Status Badge
+[![World Happiness Analysis CI](https://github.com/04795t/DS706_DE_WK2_WK3/actions/workflows/main.yml/badge.svg)](https://github.com/04795t/DS706_DE_WK2_WK3/actions/workflows/main.yml)
+
 ## Project Overview
 
 This project performs a comprehensive analysis of the World Happiness Report 2015-2019 dataset to explore global happiness patterns and the factors that contribute to happiness across 158 countries. The analysis includes:
