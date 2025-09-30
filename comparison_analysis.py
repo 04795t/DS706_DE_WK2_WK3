@@ -115,6 +115,6 @@ else:
 most_common = Counter(top_countries).most_common(1)[0]
 print(f"{most_common[0]} was the happiest country {most_common[1]} times")
 
-print(f"\nChart saved as 'happiness_trend_simple.png'")
+print("\nChart saved as 'happiness_trend_simple.png'")
 print("Analysis complete!")
 print("=" * 50)

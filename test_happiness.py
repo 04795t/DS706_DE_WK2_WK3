@@ -5,7 +5,6 @@ This test file tests data loading, filtering, grouping, and ML functionality
 
 # Import necessary libraries
 import pandas as pd
-import numpy as np
 import os
 import sys
 from sklearn.linear_model import LinearRegression
@@ -73,7 +72,7 @@ def test_data_loading_edge_cases():
     """
     # Handle missing file
     try:
-        df_missing = pd.read_csv("Data/nonexistent.csv")
+        _ = pd.read_csv("Data/nonexistent.csv")
         assert False, "Should have raised FileNotFoundError"
     except FileNotFoundError:
         pass
@@ -207,9 +206,7 @@ def test_grouping_edge_cases():
     # Grouping with missing regions
     df_with_missing = df.copy()
     df_with_missing.loc[0, "Region"] = None
-    grouped_with_missing = df_with_missing.groupby("Region", dropna=False)[
-        "Happiness Score"
-    ].mean()
+    _ = df_with_missing.groupby("Region", dropna=False)["Happiness Score"].mean()
 
     # Single country regions
     region_counts = df.groupby("Region").size()
